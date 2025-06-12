@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, computed, signal } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 
 @Component({
@@ -11,9 +11,12 @@ export class FirstComponent {
   firstName = signal('Morgan');
   age = signal(20);
   updateCount = signal(0);
+  test = computed(() => this.lastName.toUpperCase());
 
   lastName = '1234';
   birthday: Date = new Date();
+
+  normal: string = this.firstName().toUpperCase();
 
   setFirstName() {
     this.firstName.set('Jason');
