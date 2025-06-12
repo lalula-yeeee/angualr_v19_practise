@@ -1,1 +1,29 @@
-<p>first works!</p>
+
+<div>
+  <p>first works!</p>
+  <div>
+    <div>
+      <label>firstName：</label>
+      <input type="text" [(ngModel)]="firstName">
+    </div>
+    <div>
+      <label>lastName：</label>
+      <input type="text" [(ngModel)]="lastName">
+    </div>
+    <div>
+      <label>birthday：</label>
+      <input type="date" [(ngModel)]="birthday">
+    </div>
+
+    <button (click)="setFirstName()">Set FirstName</button>
+    <button (click)="computeAge()">Set Age</button>
+  </div>
+
+  <div>
+    <p>First Name: {{firstName()}}</p>
+    <p>Last Name: {{lastName}}</p>
+    <p>Age: {{age()}}</p>
+    <p>Birth Date: {{birthday}}</p>
+    <p>Update Count: {{updateCount()}}</p>
+  </div>
+</div>
