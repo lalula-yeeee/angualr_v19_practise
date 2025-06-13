@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import { CalculatorService } from './service/calculator.service';
 
 @Component({
   selector: 'app-template-syntax',
@@ -11,5 +12,6 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   styleUrl: './template-syntax.component.less'
 })
 export class TemplateSyntaxComponent {
-
+  private calculatorService = inject(CalculatorService);
+  totalCost = this.calculatorService.add(1, 2);
 }
